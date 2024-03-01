@@ -10,7 +10,8 @@ import com.revrobotics.CANSparkBase.IdleMode;
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkLowLevel.MotorType;
 
-import edu.wpi.first.wpilibj.Joystick;
+// import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
@@ -37,10 +38,10 @@ public class Robot extends TimedRobot {
    * The rookie kit comes with CIMs which are brushed motors.
    * Use the appropriate other class if you are using different controllers.
    */
-  CANSparkBase leftRear = new CANSparkMax(1, MotorType.kBrushed);
-  CANSparkBase leftFront = new CANSparkMax(2, MotorType.kBrushed);
-  CANSparkBase rightRear = new CANSparkMax(3, MotorType.kBrushed);
-  CANSparkBase rightFront = new CANSparkMax(4, MotorType.kBrushed);
+  CANSparkBase leftRear = new CANSparkMax(11, MotorType.kBrushless);
+  CANSparkBase leftFront = new CANSparkMax(12, MotorType.kBrushless);
+  CANSparkBase rightRear = new CANSparkMax(13, MotorType.kBrushless);
+  CANSparkBase rightFront = new CANSparkMax(14, MotorType.kBrushless);
 
   /*
    * A class provided to control your drivetrain. Different drive styles can be passed to differential drive:
@@ -56,18 +57,18 @@ public class Robot extends TimedRobot {
    *
    * Both of the motors used on the KitBot launcher are CIMs which are brushed motors
    */
-  CANSparkBase m_launchWheel = new CANSparkMax(6, MotorType.kBrushed);
-  CANSparkBase m_feedWheel = new CANSparkMax(5, MotorType.kBrushed);
+  CANSparkBase m_launchWheel = new CANSparkMax(22, MotorType.kBrushless);
+  CANSparkBase m_feedWheel = new CANSparkMax(23, MotorType.kBrushless);
 
   /**
    * Roller Claw motor controller instance.
   */
-  CANSparkBase m_rollerClaw = new CANSparkMax(8, MotorType.kBrushed);
+  CANSparkBase m_rollerClaw = new CANSparkMax(22, MotorType.kBrushless);
   /**
    * Climber motor controller instance. In the stock Everybot configuration a
    * NEO is used, replace with kBrushed if using a brushed motor.
    */
-  CANSparkBase m_climber = new CANSparkMax(7, MotorType.kBrushless);
+  CANSparkBase m_climber = new CANSparkMax(31, MotorType.kBrushless);
 
     /**
    * The starter code uses the most generic joystick class.
@@ -78,10 +79,10 @@ public class Robot extends TimedRobot {
    *
    * Buttons index from 0
    */
-  Joystick m_driverController = new Joystick(0);
+  XboxController m_driverController = new XboxController(0);
 
 
-  Joystick m_manipController = new Joystick(1);
+  XboxController m_manipController = new XboxController(1);
 
 
   // --------------- Magic numbers. Use these to adjust settings. ---------------
